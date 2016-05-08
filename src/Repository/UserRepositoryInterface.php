@@ -2,6 +2,8 @@
 
 namespace Repository;
 
+use Model\User;
+
 interface UserRepositoryInterface
 {
 
@@ -17,9 +19,9 @@ interface UserRepositoryInterface
     public function getUserById($id);
 
     /**
-     * @param $dataSet
-     * @return /Model/User
+     * @param User $user
+     * @return mixed
      */
-    public function createUser($dataSet);
-    
+    public function createUser(User $user);
+
 }
