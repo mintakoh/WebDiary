@@ -5,6 +5,11 @@ class TravelDiaryApp
 {
 
     /**
+     * @var TravelDiaryApp
+     */
+    public static $app;
+
+    /**
      * @var UserRepositoryInterface
      */
     private $userRepository;
@@ -18,9 +23,17 @@ class TravelDiaryApp
         $this->userRepository = $userRepository;
     }
 
-    public function run()
+    /**
+     * @return TravelDiaryApp
+     */
+    public function setAsGlobal()
     {
-        
+        return static::$app = $this;
+    }
+
+    public function execute()
+    {
+        call_user_func( array( \Controller\IndexController::class, 'index' ) );
     }
     
 }
