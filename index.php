@@ -11,6 +11,6 @@ $userRepository = new \Repository\UserTextFileRepository(__DIR__."/storage/passw
 /**
  * Run Application
  */
-$app = new TravelDiaryApp($userRepository, $simpleTemplate);
+$app = new App($userRepository, $simpleTemplate);
 $app->setAsGlobal();
 $app->execute();

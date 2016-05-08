@@ -1,10 +1,10 @@
 <?php
 use \Repository\UserRepositoryInterface;
 
-class TravelDiaryApp
+class App
 {
     /**
-     * @var TravelDiaryApp
+     * @var App
      */
     public static $app;
 
@@ -38,7 +38,7 @@ class TravelDiaryApp
     }
 
     /**
-     * @return TravelDiaryApp
+     * @return App
      */
     public function setAsGlobal()
     {
