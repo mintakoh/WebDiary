@@ -1,7 +1,7 @@
 <?php
 use \Repository\UserRepositoryInterface;
 
-class TravelDiary
+class TravelDiaryApp
 {
 
     /**
