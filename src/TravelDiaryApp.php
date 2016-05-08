@@ -11,15 +11,30 @@ class TravelDiaryApp
     /**
      * @var UserRepositoryInterface
      */
-    private $userRepository;
+    protected $userRepository;
 
     /**
-     * TravelDiary constructor.
-     * @param UserRepositoryInterface $userRepository
+     * @var \View\SimpleTemplate
      */
-    public function __construct(UserRepositoryInterface $userRepository)
+    protected $view;
+
+    /**
+     * TravelDiaryApp constructor.
+     * @param UserRepositoryInterface $userRepository
+     * @param \View\SimpleTemplate $view
+     */
+    public function __construct(UserRepositoryInterface $userRepository, \View\SimpleTemplate $view)
     {
+        $this->view = $view;
         $this->userRepository = $userRepository;
+    }
+
+    /**
+     * @return \View\SimpleTemplate
+     */
+    public function getView()
+    {
+        return $this->view;
     }
 
     /**

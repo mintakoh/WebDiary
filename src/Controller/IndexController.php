@@ -3,10 +3,8 @@ namespace Controller;
 
 class IndexController
 {
-
     public static function index()
     {
-        echo "Welcome To TravelDiary App";
+        view()->render('index', ['content' => "Welcome To TravelDiary App"]);
     }
-
 }
