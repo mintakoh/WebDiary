@@ -4,7 +4,7 @@ namespace Controller;
 
 class UserController
 {
-    static public function create()
+    public static function create()
     {
         echo "create user";
     }
