@@ -1,0 +1,14 @@
+{
+    "name": "mintakoh/web-diary",
+    "authors": [
+        {
+            "name": "mintakoh",
+            "email": "omt1537@naver.com"
+        },
+        {
+            "name": "upgle",
+            "email": "admin@upgle.com"
+        }
+    ],
+    "require": {}
+}
