@@ -46,4 +46,15 @@ class UserTextFileRepository implements UserRepositoryInterface
         file_put_contents($this->filePath, serialize($users));
     }
 
+    public function updateUser(User $user)
+    {
+        $targetUser = $this->getUserById($user->getId());
+        if($targetUser == null)
+            return false;
+
+        $users = $this->getAllUsers();
+        $users[$user->getId()] = $user;
+        file_put_contents($this->filePath, serialize($users));
+    }
+
 }

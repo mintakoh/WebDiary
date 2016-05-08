@@ -24,4 +24,9 @@ interface UserRepositoryInterface
      */
     public function createUser(User $user);
 
+    /**
+     * @param User $user
+     * @return mixed
+     */
+    public function updateUser(User $user);
 }
