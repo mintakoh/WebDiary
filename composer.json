@@ -3,12 +3,17 @@
     "authors": [
         {
             "name": "mintakoh",
-            "email": "omt1537@naver.com"
+            "email": "omt1537@naver.com",
+            "role": "Developer"
         },
         {
             "name": "upgle",
-            "email": "admin@upgle.com"
+            "email": "admin@upgle.com",
+            "role": "Developer"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": { "": "src/" }
+    }
 }
