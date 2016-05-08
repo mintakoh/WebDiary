@@ -6,7 +6,7 @@ class IndexController
 
     public static function index()
     {
-        echo "hello";
+        echo "Welcome To TravelDiary App";
     }
 
 }

@@ -3,7 +3,6 @@ use \Repository\UserRepositoryInterface;
 
 class TravelDiaryApp
 {
-
     /**
      * @var TravelDiaryApp
      */
@@ -33,7 +32,7 @@ class TravelDiaryApp
 
     public function execute()
     {
-        call_user_func( array( \Controller\IndexController::class, 'index' ) );
+        $r = isset($_GET['r']) ? $_GET['r'] : '/';
+        Router::execute($r);
     }
-    
 }
