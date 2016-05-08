@@ -17,5 +17,10 @@ class TravelDiaryApp
     {
         $this->userRepository = $userRepository;
     }
+
+    public function run()
+    {
+        
+    }
     
 }
