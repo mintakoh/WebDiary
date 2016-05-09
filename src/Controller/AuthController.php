@@ -22,7 +22,12 @@ class AuthController
         } else {
             $_SESSION['user_id'] = null;
         }
+        header('Location: /');
+    }
 
-        var_dump($_SESSION);
+    public static function logout()
+    {
+        $_SESSION['user_id'] = null;
+        header('Location: /');
     }
 }

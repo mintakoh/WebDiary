@@ -13,3 +13,4 @@ Router::route('/article/create', [\Controller\ArticleController::class, 'create'
 
 Router::route('/auth', [\Controller\AuthController::class, 'index']);
 Router::route('/auth/login', [\Controller\AuthController::class, 'login']);
+Router::route('/auth/logout', [\Controller\AuthController::class, 'logout']);
