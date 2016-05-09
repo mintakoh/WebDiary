@@ -38,6 +38,14 @@ class App
     }
 
     /**
+     * @return UserRepositoryInterface
+     */
+    public function getUserRepository()
+    {
+        return $this->userRepository;
+    }
+
+    /**
      * @return App
      */
     public function setAsGlobal()
