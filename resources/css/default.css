@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 * {
     padding: 0;
@@ -7,6 +8,7 @@
 body {
     background-color: #f5f8fa;
     font-size: 12px;
+    font-family: "Nanum Gothic", sans-serif;
 }
 
 .pull-left {
@@ -41,24 +43,27 @@ body {
 }
 #visual .slogan {
     position: absolute;
-    top: 80px;
+    top: 75px;
 
     font-size: 16px;
     color:#fff;
-    line-height: 2;
 
     z-index: 10;
 }
 #visual .slogan h3 {
     font-size: 20px;
     font-weight: normal;
+    margin-bottom: 10px;
+}
+#visual .slogan .btn-primary {
+    margin-top: 10px;
 }
 #visual .cover {
     z-index: 0;
     width: 100%;
     height: 250px;
     background: #000;
-    opacity: 0.6;
+    opacity: 0.2;
 }
 
 .secret_password{
@@ -67,4 +72,17 @@ body {
 
 .check_secret:checked ~ .secret_password{
     display: inline;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: #40c8d8;
+    color: white;
+    text-decoration: none;
+}
+.btn-large {
+    font-size: 17px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
 }
