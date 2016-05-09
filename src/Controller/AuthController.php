@@ -18,9 +18,9 @@ class AuthController
         $user = \App::$app->getUserRepository()->getUserById($_POST['id']);
 
         if($user !== null && $user->getPassword() == $_POST['password']) {
-            $_SESSION['user'] = $user;
+            $_SESSION['user_id'] = $user->getId();
         } else {
-            $_SESSION['user'] = null;
+            $_SESSION['user_id'] = null;
         }
 
         var_dump($_SESSION);
