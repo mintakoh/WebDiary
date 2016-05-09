@@ -39,13 +39,15 @@ class Article
 
     /**
      * Article constructor.
+     * @param User $user
      * @param int $date
      * @param string $subject
      * @param string $content
      * @param int $secret
      */
-    public function __construct($date, $subject, $content, $secret)
+    public function __construct(User $user, $date, $subject, $content, $secret)
     {
+        $this->user = $user;
         $this->date = $date;
         $this->subject = $subject;
         $this->content = $content;
