@@ -1,6 +1,9 @@
 <?php include "header.php" ?>
 <form action="/?r=/article/create" method="post">
     <div>
+        날짜 : <input type="date" name="date">
+    </div>
+    <div>
         제목 : <input type="text" name="subject">
     </div>
     <div>
