@@ -1,3 +1,5 @@
 <?php include "header.php" ?>
-article_list
+<ul>
+    <li><a></a></li>
+</ul>
 <?php include "footer.php" ?>

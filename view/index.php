@@ -3,4 +3,5 @@
 
 <a href="/?r=/auth">로그인</a>
 <a href="/?r=/article/write">글쓰기</a>
+<a href="/?r=/article">글목록</a>
 <?php include "footer.php" ?>
