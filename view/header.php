@@ -16,8 +16,15 @@
 
         body {
             background-color: #f5f8fa;
+            font-size: 12px;
         }
 
+        .pull-left {
+            float: left;
+        }
+        .pull-right {
+            float: right;
+        }
         .container {
             margin: 0 auto;
             width: 900px;
@@ -47,7 +54,16 @@
 <body>
 <header id="header">
     <div class="container">
-        <h1 class="brand"><i class="xi-flight"></i> Travel Diary</h1>
+        <h1 class="brand pull-left"><i class="xi-flight"></i> Travel Diary</h1>
+
+        <div class="auth pull-right">
+        <?php if(isLogged()) : ?>
+            <?=getCurrentUser()->getName()?>님
+            <a href="/?r=/auth/logout">로그아웃</a>
+        <?php else: ?>
+            <a href="/?r=/auth">로그인</a>
+        <?php endif; ?>
+        </div>
     </div>
 </header>
 <div class="container">
