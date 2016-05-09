@@ -34,16 +34,19 @@ class Article
      */
     private $secret;
 
+
     private $weather;
 
     /**
      * Article constructor.
+     * @param int $date
      * @param string $subject
      * @param string $content
      * @param int $secret
      */
-    public function __construct($subject, $content, $secret)
+    public function __construct($date, $subject, $content, $secret)
     {
+        $this->date = $date;
         $this->subject = $subject;
         $this->content = $content;
         $this->secret = $secret;
