@@ -30,7 +30,7 @@ class Article
      */
     private $content;
     /**
-     * @var
+     * @var int
      */
     private $secret;
 
@@ -40,11 +40,13 @@ class Article
      * Article constructor.
      * @param string $subject
      * @param string $content
+     * @param int $secret
      */
-    public function __construct($subject, $content)
+    public function __construct($subject, $content, $secret)
     {
         $this->subject = $subject;
         $this->content = $content;
+        $this->secret = $secret;
     }
 
 
