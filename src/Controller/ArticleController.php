@@ -7,6 +7,10 @@ use Model\Article;
 class ArticleController
 {
     public static function index(){
+        view()->render('article_list');
+    }
+
+    public static function write() {
         view()->render('article_create');
     }
 
