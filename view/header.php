@@ -5,6 +5,7 @@
     <title>Welcome To TravelDiary App</title>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/xeicon/1.0.4/xeicon.min.css" />
     <link rel="stylesheet" href="/resources/css/default.css" />
+    <link rel="stylesheet" href="/resources/css/auth.css" />
 </head>
 <body>
 <header id="header">

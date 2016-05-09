@@ -89,6 +89,7 @@ body {
     background: #40c8d8;
     color: white;
     text-decoration: none;
+    border: none;
 }
 .btn-large {
     font-size: 17px;
