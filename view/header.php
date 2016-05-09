@@ -13,7 +13,7 @@
 
         <div class="auth pull-right">
         <?php if(isLogged()) : ?>
-            <?=getCurrentUser()->getName()?>님
+            <strong><?=getCurrentUser()->getName()?></strong>님&nbsp;
             <a href="/?r=/auth/logout">로그아웃</a>
         <?php else: ?>
             <a href="/?r=/auth">로그인</a>

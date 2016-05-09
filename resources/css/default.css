@@ -9,6 +9,7 @@ body {
     background-color: #f5f8fa;
     font-size: 12px;
     font-family: "Nanum Gothic", sans-serif;
+    color: #333;
 }
 
 .pull-left {
@@ -32,6 +33,15 @@ body {
 #header .brand {
     font-weight: normal;
     font-size: 18px;
+}
+#header .auth a {
+    display: inline-block;
+    border: 1px solid #40c8d8;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 8px;
+    color: #40c8d8;
+    text-decoration: none;
 }
 
 #visual {
