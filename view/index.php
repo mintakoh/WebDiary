@@ -1,6 +1,5 @@
 <?php include "header.php" ?>
 
-
 <div id="visual">
     <div class="container">
         <div class="slogan">
@@ -14,5 +13,6 @@
 </div>
 <div class="container">
     .container
+    <a href="/?r=/article">글목록</a>
 </div>
 <?php include "footer.php" ?>

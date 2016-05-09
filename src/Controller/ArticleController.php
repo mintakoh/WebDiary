@@ -8,7 +8,20 @@ use Model\User;
 class ArticleController
 {
     public static function index(){
-        view()->render('article_list');
+        $dir = scandir("./diary/");
+
+        foreach($dir as $file_name) {
+            if(is_file("./diary/" . $file_name)){
+                $articles = $file_name;
+                $text = file_get_contents("./diary/".$articles);
+                $text_subject = explode(" ", $text);
+
+                echo $text_subject[2];
+            }
+        }
+
+
+        //view()->render('article_list');
     }
 
     public static function write() {
