@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome To TravelDiary App</title>
+    <script src="/resources/js/jquery-1.12.3.min.js"></script>
+    <script src="/resources/js/default.js"></script>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/xeicon/1.0.4/xeicon.min.css" />
     <link rel="stylesheet" href="/resources/css/default.css" />
     <link rel="stylesheet" href="/resources/css/auth.css" />
