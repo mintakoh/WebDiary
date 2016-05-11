@@ -2,7 +2,7 @@
 
 namespace Repository;
 
-class DiaryFileRepository
+class ArticleFileRepository
 {
 
     protected $filePath;
@@ -19,7 +19,7 @@ class DiaryFileRepository
         $this->filePath = $filePath;
         $this->idFilePath = $idFilePath;
     }
-    
+
     private function getNextId()
     {
         if(!file_exists($this->idFilePath)) {

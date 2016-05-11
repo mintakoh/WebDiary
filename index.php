@@ -7,7 +7,7 @@ require_once __DIR__."/app/helper.php";
 
 $simpleTemplate = new \View\SimpleTemplate(__DIR__."/view");
 $userRepository = new \Repository\UserTextFileRepository(__DIR__."/storage/passwd.txt", $simpleTemplate);
-$diaryRepository = new \Repository\DiaryFileRepository(__DIR__."/diary/", __DIR__."/storage/diary_id.txt");
+$diaryRepository = new \Repository\ArticleFileRepository(__DIR__."/diary/", __DIR__."/storage/diary_id.txt");
 
 /**
  * Run Application
