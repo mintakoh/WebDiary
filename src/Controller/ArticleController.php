@@ -16,12 +16,13 @@ class ArticleController
                 $text = file_get_contents("./diary/".$articles);
                 $text_subject = explode(" ", $text);
 
-                echo $text_subject[2];
+                $list_subjects[] = $text_subject[2];
             }
         }
 
-
-        //view()->render('article_list');
+        //foreach($list_subjects as $list_subject)
+        //    var_dump($list_subject);
+        view()->render('article_list', ['list_subjects'=>$list_subjects]);
     }
 
     public static function write() {
@@ -46,4 +47,7 @@ class ArticleController
         fclose($pFile);
     }
 
+    public static function view(){
+        echo "view";
+    }
 }
