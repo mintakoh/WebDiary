@@ -11,7 +11,7 @@
 <body>
 <header id="header">
     <div class="container">
-        <h1 class="brand pull-left"><i class="xi-flight"></i> Travel Diary</h1>
+        <a href="/" class="brand pull-left"><h1><i class="xi-flight"></i> Travel Diary</h1></a>
 
         <div class="auth pull-right">
         <?php if(isLogged()) : ?>

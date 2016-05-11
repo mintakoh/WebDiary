@@ -31,6 +31,10 @@ body {
     background: #fff;
 }
 #header .brand {
+    color: #333;
+    text-decoration: none;
+}
+#header .brand h1 {
     font-weight: normal;
     font-size: 18px;
 }
