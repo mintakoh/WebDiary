@@ -1,0 +1,28 @@
+.write-form {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.write-form fieldset {
+    border : none;
+    margin: 12px 0;
+}
+
+.write-form label {
+    display: block;
+    margin-bottom: 2px;
+}
+
+.write-form textarea {
+    width: 100%;
+    border: 1px solid #e1e8ed;
+}
+.write-form input[type=text] {
+    width: 100%;
+    height: 34px;
+    line-height: 34px;
+    border: 1px solid #e1e8ed;
+    margin-top: 3px;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
