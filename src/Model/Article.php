@@ -8,6 +8,12 @@ class Article
 {
     const IS_SECRET = 1;
     const IS_NOT_SECRET = 0;
+
+    /**
+     * @var string
+     */
+    protected $id;
+
     /**
      * @var User
      */
@@ -53,7 +59,6 @@ class Article
         $this->content = $content;
         $this->secret = $secret;
     }
-
 
     /**
      * @return User
@@ -167,5 +172,19 @@ class Article
         $this->weather = $weather;
     }
 
-
+    /**
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+    
+    /**
+     * @param string $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
 }

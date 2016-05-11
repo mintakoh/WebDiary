@@ -2,6 +2,9 @@
 
 namespace Repository;
 
+use Model\Article;
+use Model\User;
+
 class ArticleFileRepository
 {
 
@@ -32,6 +35,53 @@ class ArticleFileRepository
         file_put_contents($this->idFilePath, $nextId);
 
         return $nextId;
+    }
+
+    private function getFileName(Article $article)
+    {
+        return $this->filePath.$article->getDate().'.txt';
+    }
+
+    private function getFileNameByDate($date)
+    {
+        return $this->filePath.$date.'.txt';
+    }
+
+    public function createArticle(Article $article)
+    {
+        $article->setId($this->getNextId());
+
+        $articles[$article->getId()] = $article;
+        file_put_contents($this->getFileName($article), serialize($articles));
+    }
+
+    public function getArticlesByDate($date)
+    {
+        $articles = unserialize(file_get_contents($this->getFileNameByDate($date)));
+        return $articles;
+    }
+
+    public function getArticles()
+    {
+        $articlesSet = [];
+
+        $dir = scandir("./diary/");
+        foreach($dir as $file_name) {
+            if($file_name == '.' || $file_name == '..') continue;
+            $date = explode('.', $file_name)[0];
+
+
+            $articles = $this->getArticlesByDate($date);
+            foreach ($articles as $article) {
+                /** @var Article $article */
+                $articlesSet[$article->getDate()] = $article;
+            }
+        }
+        return $articlesSet;
+    }
+
+    public function getArticleById($id) {
+        
     }
 
 }

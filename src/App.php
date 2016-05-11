@@ -57,7 +57,7 @@ class App
     /**
      * @return ArticleFileRepository
      */
-    public function getDiaryRepository()
+    public function getArticleRepository()
     {
         return $this->diaryRepository;
     }
