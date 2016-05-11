@@ -22,6 +22,7 @@ class ArticleController
     }
 
     public static function view($id){
-        echo $id;
+        $article = \App::$app->getArticleRepository()->getArticleById($id);
+        view()->render('article', ['article'=>$article]);
     }
 }
