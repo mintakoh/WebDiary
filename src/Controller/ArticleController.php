@@ -21,7 +21,7 @@ class ArticleController
         \App::$app->getArticleRepository()->createArticle($article);
     }
 
-    public static function view(){
-        echo "view";
+    public static function view($id){
+        echo $id;
     }
 }

@@ -81,7 +81,11 @@ class ArticleFileRepository
     }
 
     public function getArticleById($id) {
-        
+//        $articles = $this->getArticles();
+//        foreach ($articles as $article) {
+//            /** @var Article $article */
+//            if($article->getId() == $id) return $article;
+//        }
     }
 
 }
