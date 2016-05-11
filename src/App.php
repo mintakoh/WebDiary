@@ -1,5 +1,6 @@
 <?php
 use \Repository\UserRepositoryInterface;
+use \Repository\DiaryFileRepository;
 
 class App
 {
@@ -13,20 +14,28 @@ class App
      */
     protected $userRepository;
 
+
+    /**
+     * @var \Repository\DiaryFileRepository
+     */
+    protected $diaryRepository;
+
     /**
      * @var \View\SimpleTemplate
      */
     protected $view;
 
     /**
-     * TravelDiaryApp constructor.
+     * App constructor.
      * @param UserRepositoryInterface $userRepository
+     * @param DiaryFileRepository $diaryRepository
      * @param \View\SimpleTemplate $view
      */
-    public function __construct(UserRepositoryInterface $userRepository, \View\SimpleTemplate $view)
+    public function __construct(UserRepositoryInterface $userRepository, DiaryFileRepository $diaryRepository, \View\SimpleTemplate $view)
     {
         $this->view = $view;
         $this->userRepository = $userRepository;
+        $this->diaryRepository = $diaryRepository;
     }
 
     /**
@@ -43,6 +52,14 @@ class App
     public function getUserRepository()
     {
         return $this->userRepository;
+    }
+
+    /**
+     * @return DiaryFileRepository
+     */
+    public function getDiaryRepository()
+    {
+        return $this->diaryRepository;
     }
 
     /**
