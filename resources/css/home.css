@@ -12,7 +12,8 @@
 }
 
 .friends-diary .friends-diary-list {
-    margin-top: 15px;
+    width: 780px;
+    margin: 15px auto;
     list-style: none;
     overflow: hidden;
 }
