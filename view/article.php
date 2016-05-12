@@ -37,6 +37,6 @@
     비밀번호 : <input type="password" name="article_password">
     <input type="submit" value="확인">
 </form>
-</div>
 <?php } ?>
+</div>
 <?php include "footer.php" ?>
