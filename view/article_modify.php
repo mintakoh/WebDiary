@@ -36,7 +36,7 @@
 <?php
                 foreach($article->getReceipts() as $receipt){
 ?>
-                <li class="receipt-list-item append-item">
+                <li class="receipt-list-item">
                     <input type="text" class="summary" name="summary[]" placeholder="지출 내역을 기입할 수 있습니다. (예. 기차 티켓 구매)" value="<?= $receipt->getSummary();?>"/>
                     <div class="pull-right">
                         <select name="currency[]">
@@ -68,10 +68,7 @@
     </form>
 </div>
 
-<?php
-    foreach($article->getReceipts() as $receipt){}
-?>
-    <li class="receipt-list-item append-item">
+<li class="receipt-list-item append-item">
     <input type="text" class="summary" name="summary[]" placeholder="지출 내역을 기입할 수 있습니다. (예. 기차 티켓 구매)" />
     <div class="pull-right">
         <select name="currency[]">
@@ -90,8 +87,7 @@
             .removeClass('append-item').appendTo('.receipt-list');
     };
     $('.add-new-item').click(appendNewReceiptItem);
-
-    appendNewReceiptItem();
+    
 </script>
 
 <?php include "footer.php" ?>
