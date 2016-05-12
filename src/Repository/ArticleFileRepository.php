@@ -51,6 +51,7 @@ class ArticleFileRepository
     {
         $article->setId($this->getNextId());
 
+        $articles = $this->getArticlesByDate($article->getDate());
         $articles[$article->getId()] = $article;
         file_put_contents($this->getFileName($article), serialize($articles));
     }
@@ -62,9 +63,18 @@ class ArticleFileRepository
     }
 
 
+    /**
+     * @param $date
+     * @return Article[]|null
+     */
     public function getArticlesByDate($date)
     {
-        $articles = unserialize(file_get_contents($this->getFileNameByDate($date)));
+        $filename = $this->getFileNameByDate($date);
+        if(!file_exists($filename)) {
+            return null;
+        }
+
+        $articles = unserialize(file_get_contents($filename));
         return $articles;
     }
 
@@ -77,11 +87,10 @@ class ArticleFileRepository
             if($file_name == '.' || $file_name == '..') continue;
             $date = explode('.', $file_name)[0];
 
-
             $articles = $this->getArticlesByDate($date);
             foreach ($articles as $article) {
                 /** @var Article $article */
-                $articlesSet[$article->getDate()] = $article;
+                $articlesSet[$article->getDate().$article->getId()] = $article;
             }
         }
         return $articlesSet;
