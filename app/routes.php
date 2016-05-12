@@ -13,6 +13,8 @@ Router::route('/articles/my', [\Controller\ArticleController::class, 'index']);
 Router::route('/article/write', [\Controller\ArticleController::class, 'write']);
 Router::route('/article/create', [\Controller\ArticleController::class, 'create']);
 Router::route('/article/(\d+)', [\Controller\ArticleController::class, 'view']);
+Router::route('/article/modify/(\d+)', [\Controller\ArticleController::class, 'modify']);
+Router::route('/article/update/(\d+)', [\Controller\ArticleController::class, 'update']);
 
 
 Router::route('/auth', [\Controller\AuthController::class, 'index']);

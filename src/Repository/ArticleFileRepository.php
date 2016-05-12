@@ -55,6 +55,13 @@ class ArticleFileRepository
         file_put_contents($this->getFileName($article), serialize($articles));
     }
 
+    public function modifyArticle(Article $article)
+    {
+        $articles[$article->getId()] = $article;
+        file_put_contents($this->getFileName($article), serialize($articles));
+    }
+
+
     public function getArticlesByDate($date)
     {
         $articles = unserialize(file_get_contents($this->getFileNameByDate($date)));

@@ -28,6 +28,30 @@ class ArticleController
         \App::$app->getArticleRepository()->createArticle($article);
     }
 
+    public static function update($id){
+        $article = \App::$app->getArticleRepository()->getArticleById($id);
+
+        $article->setDate($_POST["date"]);
+        $article->setSubject($_POST["subject"]);
+        $article->setContent($_POST["content"]);
+        $article->setSecret($_POST["secret"]);
+
+        $article->deleteAllReceipt();
+
+        for($i = 0; $i < count($_POST["price"]); $i++) {
+            $article->addReceipt(new Receipt($_POST["summary"][$i],$_POST["price"][$i],$_POST["currency"][$i]));
+        }
+
+
+        \App::$app->getArticleRepository()->modifyArticle($article);
+        view()->render('article', ['article'=>$article]);
+    }
+
+    public static function modify($id){
+        $article = \App::$app->getArticleRepository()->getArticleById($id);
+        view()->render('article_modify', ['article'=>$article]);
+    }
+
     public static function view($id){
         $article = \App::$app->getArticleRepository()->getArticleById($id);
         view()->render('article', ['article'=>$article]);

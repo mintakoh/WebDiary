@@ -214,4 +214,8 @@ class Article
         $this->receipts[] = $receipt;
     }
 
+    public function deleteAllReceipt()
+    {
+        unset($this->receipts);
+    }
 }

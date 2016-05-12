@@ -13,14 +13,18 @@
         <p>작성자 : <?= $article->getUser()->getName(); ?></p>
         <p>내용 : <?= $article->getContent(); ?></p>
         <p>지출 내역</p>
-        <?php
-            foreach($article->getReceipts() as $receipt) {
-                ?>
-                <p><?= $receipt->getSummary(); ?></p>
-                <p><?= $receipt->getCurrency(); ?></p>
-                <p><?= $receipt->getPrice(); ?></p>
-                <?php
-            }
+<?php
+        foreach($article->getReceipts() as $receipt) {
+?>
+        <p>내용 : <?= $receipt->getSummary(); ?></p>
+        <p>통화 : <?= $receipt->getCurrency(); ?></p>
+        <p>가격 : <?= $receipt->getPrice(); ?></p>
+<?php
+        }
+?>
+        <a href="/?r=/article/modify/<?=$article->getId()?>">수정</a>
+
+<?php
     }
     else{
 ?>
