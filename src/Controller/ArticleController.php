@@ -32,4 +32,9 @@ class ArticleController
         $article = \App::$app->getArticleRepository()->getArticleById($id);
         view()->render('article', ['article'=>$article]);
     }
+
+    public static function userArticles($userId) {
+        $articles = \App::$app->getArticleRepository()->getArticlesByUserId($userId);
+        view()->render('article_list', ['articles'=>$articles]);
+    }
 }
