@@ -26,6 +26,7 @@ a {
 .container {
     margin: 0 auto;
     width: 900px;
+    overflow: hidden;
 }
 
 #header {
@@ -51,6 +52,28 @@ a {
     padding: 0 8px;
     color: #40c8d8;
     text-decoration: none;
+}
+
+#header .gnb {
+    list-style: none;
+    float: left;
+    margin-left: 60px;
+}
+#header .gnb li {
+    float:left;
+}
+#header .gnb li a {
+    color:#666;
+    display: inline-block;
+    height: 60px;
+    width: 80px;
+    text-align: center;
+}
+#header .gnb li a.active,
+#header .gnb li a:focus
+#header .gnb li a:hover {
+    height: 58px;
+    border-bottom: 3px solid #40c8d8;
 }
 
 #footer {

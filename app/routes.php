@@ -9,9 +9,11 @@ Router::route('/user/update', [\Controller\UserController::class, 'update']);
 Router::route('/user/(\w+)/articles', [\Controller\ArticleController::class, 'userArticles']);
 
 Router::route('/article', [\Controller\ArticleController::class, 'index']);
+Router::route('/articles/my', [\Controller\ArticleController::class, 'index']);
 Router::route('/article/write', [\Controller\ArticleController::class, 'write']);
 Router::route('/article/create', [\Controller\ArticleController::class, 'create']);
 Router::route('/article/(\d+)', [\Controller\ArticleController::class, 'view']);
+
 
 Router::route('/auth', [\Controller\AuthController::class, 'index']);
 Router::route('/auth/login', [\Controller\AuthController::class, 'login']);

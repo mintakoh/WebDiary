@@ -16,6 +16,10 @@
     <div class="container">
         <a href="/" class="brand pull-left"><h1><i class="xi-flight"></i> Travel Diary</h1></a>
 
+        <ul class="gnb">
+            <li><a href="/?r=/article/write">새 글 쓰기</a></li>
+            <li><a href="/?r=/articles/my">내 글 보기</a></li>
+        </ul>
         <div class="auth pull-right">
         <?php if(isLogged()) : ?>
             <strong><?=getCurrentUser()->getName()?></strong>님 환영합니다.&nbsp;

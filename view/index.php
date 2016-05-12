@@ -27,6 +27,15 @@
             <li>
                 <img src="/resources/images/profiles/omt.jpg" class="profile-img"/>
             </li>
+            <li>
+                <img src="/resources/images/profiles/ajh.jpg" class="profile-img"/>
+            </li>
+            <li>
+                <img src="/resources/images/profiles/iu.jpg" class="profile-img"/>
+            </li>
+            <li>
+                <img src="/resources/images/profiles/hys.jpg" class="profile-img"/>
+            </li>
         </ul>
     </div>
     <a href="/?r=/article">글목록</a>
