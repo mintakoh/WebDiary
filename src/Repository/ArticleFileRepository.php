@@ -88,4 +88,17 @@ class ArticleFileRepository
         }
     }
 
+    public function getArticlesByUserId($userId) {
+
+        $articles = [];
+
+        /** @var Article $article */
+        foreach($this->getArticles() as $article)
+        {
+            if($article->getUser()->getId() == $userId)
+                $articles[] = $article;
+        }
+        return $articles;
+    }
+
 }
