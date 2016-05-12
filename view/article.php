@@ -4,6 +4,7 @@
      * @var \Model\Article $article
      */
 ?>
+<div class="container">
 <?php
     if($article->getSecret() === "" || (isset($_POST["article_password"]) && $_POST["article_password"] === $article->getSecret())) {
         ?>
@@ -28,7 +29,6 @@
     비밀번호 : <input type="password" name="article_password">
     <input type="submit" value="확인">
 </form>
-<?php
-?>
-<?php }?>
+</div>
+<?php } ?>
 <?php include "footer.php" ?>
