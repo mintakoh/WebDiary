@@ -51,7 +51,8 @@ class ArticleController
 
 
         \App::$app->getArticleRepository()->modifyArticle($article);
-        view()->render('article', ['article'=>$article]);
+
+        header('Location: /?r=/article/'.$article->getId());
     }
 
     public static function modify($id){
