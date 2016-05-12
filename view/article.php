@@ -22,7 +22,7 @@
 <?php
         }
 ?>
-        <a href="/?r=/article/modify/<?=$article->getId()?>">수정</a>
+        <a href="/?r=/article/modify/<?= $article->getId() ?>">수정</a>
 
 <?php
     }

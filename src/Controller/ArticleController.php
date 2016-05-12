@@ -57,6 +57,12 @@ class ArticleController
 
     public static function modify($id){
         $article = \App::$app->getArticleRepository()->getArticleById($id);
+
+        if(getCurrentUser()->getId() !== $article->getUser()->getId())
+        {
+            view()->render('not_authorized', ['article'=>$article]);
+            return;
+        }
         view()->render('article_modify', ['article'=>$article]);
     }
 
