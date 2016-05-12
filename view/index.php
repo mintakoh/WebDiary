@@ -38,6 +38,5 @@
             </li>
         </ul>
     </div>
-    <a href="/?r=/article">글목록</a>
 </div>
 <?php include "footer.php" ?>
