@@ -36,14 +36,14 @@
 </div>
 
 <li class="receipt-list-item append-item">
-    <input type="text" class="summary" placeholder="지출 내역을 기입할 수 있습니다. (예. 기차 티켓 구매)" />
+    <input type="text" class="summary" name="summary[]" placeholder="지출 내역을 기입할 수 있습니다. (예. 기차 티켓 구매)" />
     <div class="pull-right">
-        <select name="currency">
+        <select name="currency[]">
             <option value="krw">KRW(원)</option>
             <option value="usd">USD(달러)</option>
         </select>
         <span class="price-prefix"></span>
-        <input type="text" name="price" />
+        <input type="text" name="price[]" />
         <span class="price-postfix"></span>
     </div>
 </li>

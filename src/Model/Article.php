@@ -2,13 +2,12 @@
 
 namespace Model;
 
-require_once "User.php";
-require_once "Map.php";
+use Model\Receipt;
+use Model\User;
+use Model\Map;
+
 class Article
 {
-    const IS_SECRET = 1;
-    const IS_NOT_SECRET = 0;
-
     /**
      * @var string
      */
@@ -22,6 +21,11 @@ class Article
      * @var Map
      */
     private $map;
+
+    /**
+     * @var Receipt[]
+     */
+    private $receipts = [];
 
     /**
      * @var int
@@ -61,7 +65,7 @@ class Article
     }
 
     /**
-     * @return User
+     * @return \Model\User
      */
     public function getUser()
     {
@@ -69,7 +73,7 @@ class Article
     }
 
     /**
-     * @param User $user
+     * @param \Model\User $user
      */
     public function setUser($user)
     {
@@ -77,7 +81,7 @@ class Article
     }
 
     /**
-     * @return Map
+     * @return \Model\Map
      */
     public function getMap()
     {
@@ -85,12 +89,13 @@ class Article
     }
 
     /**
-     * @param Map $map
+     * @param \Model\Map $map
      */
     public function setMap($map)
     {
         $this->map = $map;
     }
+
 
     /**
      * @return int
@@ -173,6 +178,22 @@ class Article
     }
 
     /**
+     * @return \Model\Receipt
+     */
+    public function getReceipts()
+    {
+        return $this->receipts;
+    }
+
+    /**
+     * @param \Model\Receipt $receipts
+     */
+    public function setReceipts($receipts)
+    {
+        $this->receipts = $receipts;
+    }
+
+    /**
      * @return string
      */
     public function getId()
@@ -187,4 +208,10 @@ class Article
     {
         $this->id = $id;
     }
+
+    public function addReceipt(Receipt $receipt)
+    {
+        $this->receipts[] = $receipt;
+    }
+
 }
