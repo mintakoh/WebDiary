@@ -17,6 +17,17 @@
             <h3>다른 사람들의 여행 다이어리를 확인해보세요!</h3>
             <p>지금 여행하고 있는 친구들의 공개 다이어리를 볼 수 있습니다.</p>
         </div>
+        <ul class="friends-diary-list">
+            <li>
+                <img src="/resources/images/profiles/osh.jpg" class="profile-img"/>
+            </li>
+            <li>
+                <img src="/resources/images/profiles/lts.jpg" class="profile-img"/>
+            </li>
+            <li>
+                <img src="/resources/images/profiles/omt.jpg" class="profile-img"/>
+            </li>
+        </ul>
     </div>
     <a href="/?r=/article">글목록</a>
 </div>

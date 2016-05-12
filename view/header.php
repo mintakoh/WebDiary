@@ -18,7 +18,7 @@
 
         <div class="auth pull-right">
         <?php if(isLogged()) : ?>
-            <strong><?=getCurrentUser()->getName()?></strong>님&nbsp;
+            <strong><?=getCurrentUser()->getName()?></strong>님 환영합니다.&nbsp;
             <a href="/?r=/auth/logout">로그아웃</a>
         <?php else: ?>
             <a href="/?r=/auth">로그인</a>

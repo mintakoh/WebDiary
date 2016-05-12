@@ -53,6 +53,22 @@ a {
     text-decoration: none;
 }
 
+#footer {
+    margin-top: 20px;
+    height: 70px;
+    background: #fff;
+}
+#footer .brand {
+    margin-top: 25px;
+    color: #bbb;
+    text-decoration: none;
+}
+#footer .brand h1 {
+    font-weight: normal;
+    font-size: 15px;
+}
+
+
 #visual {
     position: relative;
     width: 100%;
