@@ -18,6 +18,7 @@
     <?php endforeach; ?>
     <a href="/?r=/article/modify/<?=$article->getId()?>">수정</a>
 <?php } else{ ?>
+    
 <form method="post" class="secret-form">
     <div class="lock-icon">
         <i class="xi-lock"></i>
