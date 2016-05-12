@@ -28,8 +28,12 @@
     }
     else{
 ?>
-<form method="post">
-    <p>비밀글입니다.</p>
+<form method="post" class="secret-form">
+    <div class="lock-icon">
+        <i class="xi-lock"></i>
+        <p>비밀글입니다.</p>
+    </div>
+
     비밀번호 : <input type="password" name="article_password">
     <input type="submit" value="확인">
 </form>

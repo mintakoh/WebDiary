@@ -27,6 +27,25 @@
     box-sizing: border-box;
 }
 
+.secret-form {
+    width: 400px;
+    background: #fff;
+    border: 1px solid #e1e8ed;
+
+    text-align: center;
+    padding: 50px 20px;
+    margin: 20px auto;
+    color: #666;
+}
+.secret-form .lock-icon {
+    margin-bottom: 20px;
+}
+.secret-form .lock-icon i {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+
 .receipt-list {
     list-style: none;
     padding: 5px 15px;
