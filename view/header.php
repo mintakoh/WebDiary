@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/resources/css/default.css" />
     <link rel="stylesheet" href="/resources/css/auth.css" />
     <link rel="stylesheet" href="/resources/css/diary.css" />
+    <link rel="stylesheet" href="/resources/css/home.css" />
 </head>
 <body>
 <header id="header">

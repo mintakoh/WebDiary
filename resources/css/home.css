@@ -1,0 +1,12 @@
+
+.friends-diary {
+    margin-top: 50px;
+}
+.friends-diary .friends-diary-title {
+    text-align: center;
+    font-weight:normal;
+}
+.friends-diary .friends-diary-title p {
+    margin-top: 10px;
+    color: #666;
+}
