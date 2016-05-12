@@ -12,6 +12,11 @@ body {
     color: #333;
 }
 
+a {
+    color: #1cb9d8;
+    text-decoration: none;
+}
+
 .pull-left {
     float: left;
 }
