@@ -33,6 +33,8 @@ class ArticleController
         }
 
         \App::$app->getArticleRepository()->createArticle($article);
+
+        header('Location: /?r=/article/'.$article->getId());
     }
 
     public static function update($id){
