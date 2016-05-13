@@ -62,6 +62,21 @@ class ArticleFileRepository
         file_put_contents($this->getFileName($article), serialize($articles));
     }
 
+    public function removeArticleById($id)
+    {
+        $article = $this->getArticleById($id);
+        $filename = $this->getFileNameByDate($article->getDate());
+
+        $articles = unserialize(file_get_contents($filename));
+
+        if(count($articles) == 1){
+            unlink($filename);
+        }
+        else{
+            unset($articles[$article->getId()]);
+            file_put_contents($this->getFileName($article), serialize($articles));
+        }
+    }
 
     /**
      * @param $date

@@ -17,6 +17,7 @@
     <p>가격 : <?= $receipt->getPrice(); ?></p>
     <?php endforeach; ?>
     <a href="/?r=/article/modify/<?=$article->getId()?>">수정</a>
+    <a href="/?r=/article/remove/<?=$article->getId()?>">삭제</a>
 <?php } else{ ?>
     
 <form method="post" class="secret-form">

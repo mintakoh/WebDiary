@@ -2,7 +2,7 @@
 <div class="container">
     <ul class="article-list">
         <?php
-        /** @var \Model\Article $article */
+        /** @var \Model\Article $articles */
         krsort($articles);
         foreach($articles as $article) :
         ?>

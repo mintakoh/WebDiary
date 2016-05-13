@@ -78,6 +78,12 @@ class ArticleController
         view()->render('article', ['article'=>$article]);
     }
 
+    public static function remove($id){
+        \App::$app->getArticleRepository()->removeArticleById($id);
+
+        header('Location: /?r=/article');
+    }
+
     public static function userArticles($userId) {
         $articles = \App::$app->getArticleRepository()->getArticlesByUserId($userId);
         view()->render('article_list', ['articles'=>$articles]);

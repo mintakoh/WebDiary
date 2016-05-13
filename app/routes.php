@@ -15,6 +15,7 @@ Router::route('/article/create', [\Controller\ArticleController::class, 'create'
 Router::route('/article/(\d+)', [\Controller\ArticleController::class, 'view']);
 Router::route('/article/modify/(\d+)', [\Controller\ArticleController::class, 'modify']);
 Router::route('/article/update/(\d+)', [\Controller\ArticleController::class, 'update']);
+Router::route('/article/remove/(\d+)', [\Controller\ArticleController::class, 'remove']);
 
 
 Router::route('/auth', [\Controller\AuthController::class, 'index']);
