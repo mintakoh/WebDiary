@@ -10,6 +10,11 @@
             패스워드
             <input type="password" name="password" />
         </label>
+        <?php if($error) : ?>
+            <div class="auth-form-error">
+                아이디/비밀번호가 올바르지 않습니다.
+            </div>
+        <?php endif; ?>
         <input type="submit" value="로그인" class="btn-primary" />
     </form>
 </div>

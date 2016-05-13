@@ -9,7 +9,8 @@ class AuthController
 {
     public static function index()
     {
-        view()->render('auth');
+        $error = isset($_GET['error']);
+        view()->render('auth', ['error' => $error]);
     }
 
     public static function login()
@@ -19,10 +20,11 @@ class AuthController
 
         if($user !== null && $user->getPassword() == $_POST['password']) {
             $_SESSION['user_id'] = $user->getId();
+            header('Location: /');
         } else {
             $_SESSION['user_id'] = null;
+            header('Location: /?r=/auth&error=NOT_VALID_USER');
         }
-        header('Location: /');
     }
 
     public static function logout()
