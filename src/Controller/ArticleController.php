@@ -9,7 +9,14 @@ use Model\User;
 class ArticleController
 {
     public static function index(){
-        $articles = \App::$app->getArticleRepository()->getArticles();
+
+        /** @var User $user */
+        $user = getCurrentUser();
+
+        if($user == null) {
+            header('Location: /?r=/auth');
+        }
+        $articles = \App::$app->getArticleRepository()->getArticlesByUserId($user->getId());
         view()->render('article_list', ['articles'=>$articles]);
     }
 
