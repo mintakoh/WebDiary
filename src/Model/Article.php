@@ -218,4 +218,13 @@ class Article
     {
         $this->receipts = [];
     }
+
+    public function getSummary($cut = 100)
+    {
+        $summary = mb_substr($this->content, 0, $cut, "UTF-8");
+        if(mb_strlen($this->content, "UTF-8") > $cut) {
+            $summary .= "...";
+        }
+        return $summary;
+    }
 }
