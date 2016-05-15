@@ -77,7 +77,11 @@ class ArticleController
 
     public static function view($id){
         $article = \App::$app->getArticleRepository()->getArticleById($id);
-        view()->render('article', ['article'=>$article]);
+        $isOwner = false;
+        if($article->getUser()->getId() == getCurrentUser()->getId()){
+            $isOwner = true;
+        }
+        view()->render('article', ['article'=>$article, 'isOwner'=>$isOwner]);
     }
 
     public static function remove($id){

@@ -16,9 +16,15 @@
     <p>통화 : <?= $receipt->getCurrency(); ?></p>
     <p>가격 : <?= $receipt->getPrice(); ?></p>
     <?php endforeach; ?>
+    <?php if($isOwner == true){ ?>
+    <a href="/?r=/articles/my">목록</a>
     <a href="/?r=/article/modify/<?=$article->getId()?>">수정</a>
     <a href="/?r=/article/remove/<?=$article->getId()?>">삭제</a>
-<?php } else{ ?>
+    <?php } else{ ?>
+    <a href="/?r=/user/<?=$article->getUser()->getId()?>/articles">목록</a>
+<?php }
+    } else{
+?>
     
 <form method="post" class="secret-form">
     <div class="lock-icon">
