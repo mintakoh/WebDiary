@@ -40,10 +40,6 @@ class AuthController
 
     public static function joinRequest()
     {
-        /**
-         * Validation
-         */
-        
         $id = $_POST['id'];
         $password = $_POST['password'];
         $name = $_POST['name'];
@@ -52,16 +48,19 @@ class AuthController
         $user = $userRepository->getUserById($id);
 
         if($user !== null) {
-            $newUser = new User($id, $name, $password);
-            $userRepository->createUser($newUser);
-
-            $_SESSION['user_id'] = $newUser->getId();
-            header('Location: /');
+            if (isset($_SERVER["HTTP_REFERER"])) {
+                header("Location: " . $_SERVER["HTTP_REFERER"]);
+            }
+            else {
+                header('Location: /');
+            }
         }
 
-        if (isset($_SERVER["HTTP_REFERER"])) {
-            header("Location: " . $_SERVER["HTTP_REFERER"]);
-        }
+        $newUser = new User($id, $password, $name);
+        $userRepository->createUser($newUser);
+
+        $_SESSION['user_id'] = $newUser->getId();
+        header('Location: /');
     }
 
 }
