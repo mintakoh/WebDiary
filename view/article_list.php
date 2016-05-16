@@ -1,8 +1,11 @@
-<?php include "header.php" ?>
+<?php
+    include "header.php";
+    /** @var \Model\Article[] $articles */
+?>
 <div class="container">
+    <?php if(count($articles) > 0) : ?>
     <ul class="article-list">
         <?php
-        /** @var \Model\Article $articles */
         krsort($articles);
         foreach($articles as $article) :
         ?>
@@ -13,5 +16,11 @@
             </li>
         <?php endforeach; ?>
     </ul>
+    <?php else : ?>
+    <div class="no-article">
+        <i class="xi-notice"></i>
+        <p>글이 없습니다.</p>
+    </div>
+    <?php endif; ?>
 </div>
 <?php include "footer.php" ?>
