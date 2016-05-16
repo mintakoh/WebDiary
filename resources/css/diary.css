@@ -117,3 +117,24 @@
     padding: 20px 0;
     font-size: 26px;
 }
+
+.article-view {
+    margin-top: 20px;
+    padding: 25px;
+    background: #fff;
+}
+.article-view-meta {
+    color: #666;
+}
+.article-view-meta span {
+    margin-right: 8px;
+}
+.article-view-title {
+    padding: 0 0 15px;
+    font-size: 18px;
+}
+.article-view-content {
+    padding: 15px 0;
+    font-size: 13px;
+    line-height: 1.8;
+}
