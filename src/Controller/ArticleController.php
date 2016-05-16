@@ -76,9 +76,13 @@ class ArticleController
     }
 
     public static function view($id){
+
+        /** @var User $currentUser */
+        $currentUser = getCurrentUser();
+
         $article = \App::$app->getArticleRepository()->getArticleById($id);
         $isOwner = false;
-        if($article->getUser()->getId() == getCurrentUser()->getId()){
+        if(isset($currentUser) && $article->getUser()->getId() == $currentUser->getId()){
             $isOwner = true;
         }
         view()->render('article', ['article'=>$article, 'isOwner'=>$isOwner]);
