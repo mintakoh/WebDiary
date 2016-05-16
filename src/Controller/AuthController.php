@@ -32,4 +32,36 @@ class AuthController
         $_SESSION['user_id'] = null;
         header('Location: /');
     }
+
+    public static function join()
+    {
+        view()->render('join');
+    }
+
+    public static function joinRequest()
+    {
+        /**
+         * Validation
+         */
+        
+        $id = $_POST['id'];
+        $password = $_POST['password'];
+        $name = $_POST['name'];
+
+        $userRepository = \App::$app->getUserRepository();
+        $user = $userRepository->getUserById($id);
+
+        if($user !== null) {
+            $newUser = new User($id, $name, $password);
+            $userRepository->createUser($newUser);
+
+            $_SESSION['user_id'] = $newUser->getId();
+            header('Location: /');
+        }
+
+        if (isset($_SERVER["HTTP_REFERER"])) {
+            header("Location: " . $_SERVER["HTTP_REFERER"]);
+        }
+    }
+
 }

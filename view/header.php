@@ -26,6 +26,7 @@
             <a href="/?r=/auth/logout">로그아웃</a>
         <?php else: ?>
             <a href="/?r=/auth">로그인</a>
+            <a href="/?r=/join">회원가입</a>
         <?php endif; ?>
         </div>
     </div>

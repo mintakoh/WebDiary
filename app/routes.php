@@ -21,3 +21,5 @@ Router::route('/article/remove/(\d+)', [\Controller\ArticleController::class, 'r
 Router::route('/auth', [\Controller\AuthController::class, 'index']);
 Router::route('/auth/login', [\Controller\AuthController::class, 'login']);
 Router::route('/auth/logout', [\Controller\AuthController::class, 'logout']);
+Router::route('/join', [\Controller\AuthController::class, 'join']);
+Router::route('/join/request', [\Controller\AuthController::class, 'joinRequest']);
