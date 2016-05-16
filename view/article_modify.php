@@ -22,8 +22,13 @@
                     <textarea rows="10" cols="50" name="content"><?= $article->getContent()?></textarea>
                 </fieldset>
                 <fieldset class="form-group">
+                    <?php if($article->getSecret() !== ""){?>
+                    비밀글 <input type="checkbox" class="check_secret" checked>
+                    <input type="password" name="secret" class="secret_password" value="<?= $article->getSecret()?>">
+                    <?php } else {?>
                     비밀글 <input type="checkbox" class="check_secret">
                     <input type="password" name="secret" class="secret_password">
+                    <?php } ?>
                 </fieldset>
                 <button type="submit" class="btn-primary btn-large">작성</button>
             </div>
