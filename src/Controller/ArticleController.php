@@ -21,6 +21,14 @@ class ArticleController
     }
 
     public static function write() {
+
+        /** @var User $user */
+        $user = getCurrentUser();
+
+        if($user == null) {
+            header('Location: /?r=/auth');
+        }
+
         view()->render('article_create');
     }
 
