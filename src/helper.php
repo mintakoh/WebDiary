@@ -8,6 +8,13 @@ function view() {
 }
 
 /**
+ * @return App
+ */
+function app() {
+    return \App::$app;
+}
+
+/**
  * @return \Model\User|null
  */
 function getCurrentUser() {

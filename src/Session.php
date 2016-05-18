@@ -47,6 +47,14 @@ class Session
         return null;
     }
 
+    public static function push($key, $value)
+    {
+        if(!isset($_SESSION[$key]) || !is_array($_SESSION[$key])) {
+            $_SESSION[$key] = [];
+        }
+        $_SESSION[$key][] = $value;
+    }
+
     public static function get($key, $child = false)
     {
         if ($child == true) {
