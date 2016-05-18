@@ -23,10 +23,10 @@
                 </fieldset>
                 <fieldset class="form-group">
                     <?php if($article->getSecret() !== ""){?>
-                    비밀글 <input type="checkbox" class="check_secret" checked>
+                    비밀글 <input type="checkbox" class="check_secret" name="check" checked>
                     <input type="password" name="secret" class="secret_password" value="<?= $article->getSecret()?>">
                     <?php } else {?>
-                    비밀글 <input type="checkbox" class="check_secret">
+                    비밀글 <input type="checkbox" class="check_secret" name="check">
                     <input type="password" name="secret" class="secret_password">
                     <?php } ?>
                 </fieldset>
