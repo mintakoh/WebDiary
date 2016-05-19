@@ -237,6 +237,10 @@ class Article
 
     public function getSummary($cut = 100)
     {
+        if(strlen($this->getSecret()) > 0) {
+            return "<i class='xi-lock'></i> 비밀글은 미리보기를 제공하지 않습니다.";
+        }
+
         $summary = mb_substr($this->content, 0, $cut, "UTF-8");
         if(mb_strlen($this->content, "UTF-8") > $cut) {
             $summary .= "...";

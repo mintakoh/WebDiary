@@ -11,7 +11,7 @@
         <?php foreach($articles as $article) : ?>
             <li class="article-list-item">
                 <a href="/?r=/article/<?=$article->getId()?>" class="article-list-item-subject"><?=$article->getSubject()?></a>
-                <p class="article-list-item-summary"><?=$article->getSummary(10)?></p>
+                <p class="article-list-item-summary"><?=$article->getSummary(150)?></p>
                 <p class="article-list-item-meta"><?=$article->getDate()?> <?=$article->getUser()->getName()?> <i class="xi-<?=$article->getWeather()?>"></i> <?=$article->getWeatherText()?></i></p>
             </li>
         <?php endforeach; ?>
