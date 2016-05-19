@@ -244,17 +244,13 @@ class Article
         return $summary;
     }
 
-    public function getTotalPrice()
+    public function getTotalPrice($currency)
     {
-        $totalPrices = [0,0];
+        $totalPrices[$currency] = 0;
         foreach($this->receipts as $receipt){
-            if($receipt->getCurrency() == "krw"){
-                $totalPrices['krw'] += $receipt->getPrice();
-            }
-            elseif($receipt->getCurrency() == 'usd'){
-                $totalPrices['usd'] += $receipt->getPrice();
-            }
+            if($currency == $receipt->getCurrency())
+                $totalPrices[$currency] += $receipt->getPrice();
         }
-        return $totalPrices;
+        return $totalPrices[$currency];
     }
 }
