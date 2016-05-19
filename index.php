@@ -11,15 +11,20 @@ IoC::register('template', function(){
     return new \View\SimpleTemplate(__DIR__."/view");
 });
 
-$userRepository = new \Repository\UserTextFileRepository(__DIR__."/storage/passwd.txt");
-$diaryRepository = new \Repository\ArticleFileRepository(__DIR__."/diary/", __DIR__."/storage/diary_id.txt");
+IoC::register('userStore', function(){
+    return new \Repository\UserTextFileRepository(__DIR__."/storage/passwd.txt");
+});
+
+IoC::register('diaryStore', function(){
+    return new \Repository\ArticleFileRepository(__DIR__."/diary/", __DIR__."/storage/diary_id.txt");
+});
 
 /**
  * Run Application
  */
 Session::init();
 
-$app = new App($userRepository, $diaryRepository);
+$app = new App();
 $app->setAsGlobal();
 $app->execute();
 

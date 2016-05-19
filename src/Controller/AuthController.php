@@ -15,8 +15,11 @@ class AuthController
 
     public static function login()
     {
+        /** @var \Repository\UserRepositoryInterface $userRepository */
+        $userRepository = \IoC::resolve('userStore');
+
         /** @var User $user */
-        $user = \App::$app->getUserRepository()->getUserById($_POST['id']);
+        $user = $userRepository->getUserById($_POST['id']);
 
         if($user !== null && $user->getPassword() == $_POST['password']) {
             $_SESSION['user_id'] = $user->getId();
@@ -44,7 +47,8 @@ class AuthController
         $password = $_POST['password'];
         $name = $_POST['name'];
 
-        $userRepository = \App::$app->getUserRepository();
+        /** @var \Repository\UserRepositoryInterface $userRepository */
+        $userRepository = \IoC::resolve('userStore');
         $user = $userRepository->getUserById($id);
 
         if($user !== null) {

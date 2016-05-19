@@ -21,7 +21,10 @@ function getCurrentUser() {
     if(!isset($_SESSION['user_id'])) {
         return null;
     }
-    return App::$app->getUserRepository()->getUserById($_SESSION['user_id']);
+
+    /** @var \Repository\UserRepositoryInterface $userStore */
+    $userStore = IoC::resolve('userStore');
+    return $userStore->getUserById($_SESSION['user_id']);
 }
 
 /**

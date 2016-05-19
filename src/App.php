@@ -1,6 +1,4 @@
 <?php
-use \Repository\UserRepositoryInterface;
-use \Repository\ArticleFileRepository;
 
 class App
 {
@@ -10,41 +8,12 @@ class App
     public static $app;
 
     /**
-     * @var UserRepositoryInterface
-     */
-    protected $userRepository;
-
-
-    /**
-     * @var \Repository\ArticleFileRepository
-     */
-    protected $diaryRepository;
-
-    /**
      * App constructor.
-     * @param UserRepositoryInterface $userRepository
-     * @param ArticleFileRepository $diaryRepository
      */
-    public function __construct(UserRepositoryInterface $userRepository, ArticleFileRepository $diaryRepository)
+    public function __construct()
     {
-        $this->userRepository = $userRepository;
-        $this->diaryRepository = $diaryRepository;
-    }
-
-    /**
-     * @return UserRepositoryInterface
-     */
-    public function getUserRepository()
-    {
-        return $this->userRepository;
-    }
-
-    /**
-     * @return ArticleFileRepository
-     */
-    public function getArticleRepository()
-    {
-        return $this->diaryRepository;
+        $this->userRepository = IoC::resolve('userStore');
+        $this->diaryRepository = IoC::resolve('diaryStore');
     }
 
     /**
