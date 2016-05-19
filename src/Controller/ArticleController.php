@@ -82,6 +82,7 @@ class ArticleController
         $article->setDate($_POST["date"]);
         $article->setSubject($_POST["subject"]);
         $article->setContent($_POST["content"]);
+        $article->setWeather($_POST["weather"]);
 
         if($_POST["check"] =="on")
             $article->setSecret($_POST["secret"]);

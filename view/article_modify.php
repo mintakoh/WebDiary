@@ -22,6 +22,54 @@
                     <textarea rows="10" cols="50" name="content"><?= $article->getContent()?></textarea>
                 </fieldset>
                 <fieldset class="form-group">
+                    <label>날씨</label>
+                    <?php
+                        switch($article->getWeather()){
+                            case "sun": { ?>
+                                <i class="weather-icon xi-sun"></i> 맑음 <input type="radio" name="weather" value="sun" checked/>
+                                <i class="weather-icon xi-umbrella"></i> 비 <input type="radio" name="weather" value="umbrella" />
+                                <i class="weather-icon xi-cloudiness"></i> 흐림 <input type="radio" name="weather" value="cloudiness"/>
+                                <i class="weather-icon xi-lightning"></i> 번개 <input type="radio" name="weather" value="lightning"/>
+                                <i class="weather-icon xi-snow"></i> 눈 <input type="radio" name="weather" value="snow"/>
+                    <?php
+                                break;}
+                            case "umbrella": {?>
+                    <i class="weather-icon xi-sun"></i> 맑음 <input type="radio" name="weather" value="sun" />
+                    <i class="weather-icon xi-umbrella"></i> 비 <input type="radio" name="weather" value="umbrella" checked/>
+                    <i class="weather-icon xi-cloudiness"></i> 흐림 <input type="radio" name="weather" value="cloudiness"/>
+                    <i class="weather-icon xi-lightning"></i> 번개 <input type="radio" name="weather" value="lightning"/>
+                    <i class="weather-icon xi-snow"></i> 눈 <input type="radio" name="weather" value="snow"/>
+                    <?php
+                                break;}
+                            case "cloudiness": {?>
+                    <i class="weather-icon xi-sun"></i> 맑음 <input type="radio" name="weather" value="sun" />
+                    <i class="weather-icon xi-umbrella"></i> 비 <input type="radio" name="weather" value="umbrella" />
+                    <i class="weather-icon xi-cloudiness"></i> 흐림 <input type="radio" name="weather" value="cloudiness" checked/>
+                    <i class="weather-icon xi-lightning"></i> 번개 <input type="radio" name="weather" value="lightning"/>
+                    <i class="weather-icon xi-snow"></i> 눈 <input type="radio" name="weather" value="snow"/>
+                    <?php
+                                break;}
+                            case "lightning":{ ?>
+                    <i class="weather-icon xi-sun"></i> 맑음 <input type="radio" name="weather" value="sun" />
+                    <i class="weather-icon xi-umbrella"></i> 비 <input type="radio" name="weather" value="umbrella" />
+                    <i class="weather-icon xi-cloudiness"></i> 흐림 <input type="radio" name="weather" value="cloudiness"/>
+                    <i class="weather-icon xi-lightning"></i> 번개 <input type="radio" name="weather" value="lightning" checked/>
+                    <i class="weather-icon xi-snow"></i> 눈 <input type="radio" name="weather" value="snow"/>
+                    <?php
+                                break;}
+                            case "snow": {?>
+                    <i class="weather-icon xi-sun"></i> 맑음 <input type="radio" name="weather" value="sun" />
+                    <i class="weather-icon xi-umbrella"></i> 비 <input type="radio" name="weather" value="umbrella" />
+                    <i class="weather-icon xi-cloudiness"></i> 흐림 <input type="radio" name="weather" value="cloudiness"/>
+                    <i class="weather-icon xi-lightning"></i> 번개 <input type="radio" name="weather" value="lightning"/>
+                    <i class="weather-icon xi-snow"></i> 눈 <input type="radio" name="weather" value="snow" checked/>
+                    <?php
+                                break;}
+                        }
+                    ?>
+
+                </fieldset>
+                <fieldset class="form-group">
                     <?php if($article->getSecret() !== ""){?>
                     비밀글 <input type="checkbox" class="check_secret" name="check" checked>
                     <input type="password" name="secret" class="secret_password" value="<?= $article->getSecret()?>">

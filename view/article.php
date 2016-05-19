@@ -16,7 +16,6 @@
         <div class="article-view-content">
             <?= $article->getContent(); ?>
         </div>
-
         <p>지출 내역</p>
         <?php foreach($article->getReceipts() as $receipt) : ?>
         <p>내용 : <?= $receipt->getSummary(); ?></p>
