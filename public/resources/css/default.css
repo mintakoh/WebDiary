@@ -186,3 +186,16 @@ a {
     background-color: #f2dede;
     border-color: #ebccd1;
 }
+
+.pagination {
+    text-align: center;
+    line-height: 19px;
+}
+.pagination .page-num {
+    display: inline-block;
+    width: 20px;
+    height: 19px;
+    background: #fff;
+    border: 1px solid #ddd;
+    margin: 0 1px;
+}

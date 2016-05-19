@@ -15,10 +15,12 @@
                 <p class="article-list-item-meta"><?=$article->getDate()?> <?=$article->getUser()->getName()?> <i class="xi-<?=$article->getWeather()?>"></i> <?=$article->getWeatherText()?></i></p>
             </li>
         <?php endforeach; ?>
+    </ul>
+    <div class="pagination">
         <?php
         if($next <= 0) {
-        ?>
-        <a>이전</a>
+            ?>
+            <a>이전</a>
         <?php }
         else {
             if ($isOwner == true) {
@@ -38,11 +40,11 @@
             for ($i = 1 + 4 * $next; $i <= $pages - (floor($pages/4) - $next); $i++) {
                 if($isOwner == true) {
                     ?>
-                    <a href="/?r=/articles/my/<?= $i ?>"><?= $i ?></a>
+                    <a href="/?r=/articles/my/<?= $i ?>" class="page-num"><?= $i ?></a>
                     <?php
                 }else{
                     ?>
-                    <a href="/?r=/user/<?= $userId?>/articles/<?= $i ?>"><?= $i ?></a>
+                    <a href="/?r=/user/<?= $userId?>/articles/<?= $i ?>"  class="page-num"><?= $i ?></a>
                     <?php
                 }
             }
@@ -50,8 +52,8 @@
         ?>
         <?php
         if($next >= floor($pages/4)){
-        ?>
-        <a>다음</a>
+            ?>
+            <a>다음</a>
         <?php }
         else {
             if ($isOwner == true) {
@@ -65,7 +67,7 @@
             }
         }
         ?>
-    </ul>
+    </div>
     <?php else : ?>
     <div class="no-article">
         <i class="xi-notice"></i>
