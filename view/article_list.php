@@ -8,17 +8,15 @@
 <div class="container">
     <?php if(count($articles) > 0) : ?>
     <ul class="article-list">
-        <?php
-        foreach($articles as $article) :
-        ?>
+        <?php foreach($articles as $article) : ?>
             <li class="article-list-item">
                 <a href="/?r=/article/<?=$article->getId()?>" class="article-list-item-subject"><?=$article->getSubject()?></a>
                 <p class="article-list-item-summary"><?=$article->getSummary(10)?></p>
-                <p class="article-list-item-meta"><?=$article->getDate()." ".$article->getUser()->getName()?></p>
+                <p class="article-list-item-meta"><?=$article->getDate()?> <?=$article->getUser()->getName()?> <i class="xi-<?=$article->getWeather()?>"></i> <?=$article->getWeatherText()?></i></p>
             </li>
         <?php endforeach; ?>
         <?php
-        if($next <= 0){
+        if($next <= 0) {
         ?>
         <a>이전</a>
         <?php }

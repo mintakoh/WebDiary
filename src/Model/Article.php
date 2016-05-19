@@ -167,7 +167,22 @@ class Article
      */
     public function getWeather()
     {
+        if(!$this->weather) {
+            return 'sun';
+        }
         return $this->weather;
+    }
+
+    public function getWeatherText()
+    {
+        $texts = [
+            'sun' => '맑음',
+            'umbrella' => '비',
+            'cloudiness' => '흐림',
+            'lightning' => '번개',
+            'snow' => '눈'
+        ];
+        return $texts[$this->getWeather()];
     }
 
     /**
