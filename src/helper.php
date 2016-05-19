@@ -4,7 +4,7 @@
  * @return \View\SimpleTemplate
  */
 function view() {
-    return \App::$app->getView();
+    return IoC::resolve('template');
 }
 
 /**
