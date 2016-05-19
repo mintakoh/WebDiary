@@ -144,6 +144,15 @@ a {
     text-decoration: none;
     border: none;
 }
+.btn-danger {
+    cursor: pointer;
+    display: inline-block;
+    background: #a94442;
+    color: white;
+    text-decoration: none;
+    border: none;
+}
+
 .btn-large {
     font-size: 17px;
     height: 40px;
