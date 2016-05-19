@@ -18,7 +18,7 @@
 
         <ul class="gnb">
             <li><a href="/?r=/article/write" <?php if(isset($_GET['r']) && $_GET['r']=='/article/write') : ?>class="active"<?php endif; ?>>새 글 쓰기</a></li>
-            <li><a href="/?r=/articles/my/1" <?php if(isset($_GET['r']) && $_GET['r']=='/articles/my') : ?>class="active"<?php endif; ?>>내 글 보기</a></li>
+            <li><a href="/?r=/articles/my/1" <?php if(isset($_GET['r']) && preg_match("/^\/articles\/my\/.+/i", $_GET['r'])) : ?>class="active"<?php endif; ?>>내 글 보기</a></li>
         </ul>
         <div class="auth pull-right">
         <?php if(isLogged()) : ?>
