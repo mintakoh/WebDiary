@@ -138,6 +138,10 @@ class ArticleController
     }
 
     public function userArticles($userId, $page) {
+        if(getCurrentUser() == null){
+            header('Location: /?r=/auth');
+        }
+
         $articleSet = IoC::resolve('diaryStore')->getArticlesByUserId($userId);
         $articles = [];
 
