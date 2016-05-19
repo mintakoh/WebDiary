@@ -1,5 +1,5 @@
 <?php
-namespace View;
+namespace Core\View;
 
 class SimpleTemplate
 {

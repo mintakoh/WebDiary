@@ -1,7 +1,9 @@
 <?php
 
+use Core\IoC;
+
 /**
- * @return \View\SimpleTemplate
+ * @return \Core\View\SimpleTemplate
  */
 function view() {
     return IoC::resolve('template');

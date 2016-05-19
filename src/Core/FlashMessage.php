@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class FlashMessage
 {
     const INFO    = 'i';

@@ -1,11 +1,7 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: seonghyun
- * Date: 2016. 5. 19.
- * Time: 오전 6:09
- */
+namespace Core;
+
 class Session
 {
 

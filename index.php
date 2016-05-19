@@ -1,14 +1,14 @@
 <?php
-
 date_default_timezone_set("Asia/Seoul");
-
 require_once __DIR__."/vendor/autoload.php";
 require_once __DIR__."/src/routes.php";
 require_once __DIR__."/src/helper.php";
 
+use Core\Session;
+use Core\IoC;
 
 IoC::register('template', function(){
-    return new \View\SimpleTemplate(__DIR__."/view");
+    return new \Core\View\SimpleTemplate(__DIR__."/view");
 });
 
 IoC::register('userStore', function(){

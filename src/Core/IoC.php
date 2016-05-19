@@ -1,4 +1,5 @@
 <?php
+namespace Core;
 
 class IoC
 {
@@ -7,12 +8,12 @@ class IoC
     protected static $singleton = [];
 
 
-    public static function register($name, Closure $resolve)
+    public static function register($name, \Closure $resolve)
     {
         static::$registry[$name] = $resolve;
     }
 
-    public static function singleton($name, Closure $resolve)
+    public static function singleton($name, \Closure $resolve)
     {
         static::$singleton[$name] = $resolve();
     }
@@ -30,7 +31,7 @@ class IoC
             $name = static::$registry[$name];
             return $name();
         }
-        throw new Exception('Nothing registered with that name, fool.');
+        throw new \Exception('Nothing registered with that name, fool.');
     }
 
     public static function registered($name)
