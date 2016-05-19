@@ -34,7 +34,7 @@
                 <?php foreach($article->getReceipts() as $receipt) : ?>
                 <tr class="expense-statement-item">
                     <td><?=$receipt->getSummary()?></td>
-                    <td class="price"><?=$receipt->getCurrency()?> <?=number_format($receipt->getPrice())?></td>
+                    <td class="price"><?=strtoupper($receipt->getCurrency())?> <?=number_format($receipt->getPrice())?></td>
                 </tr>
                 <?php endforeach; ?>
                 </tbody>

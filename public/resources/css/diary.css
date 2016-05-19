@@ -148,11 +148,21 @@
 }
 .article-view .expense-statement {
     width: 100%;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
 }
+.article-view .expense-statement thead th {
+    background: #eaedf0;
+}
+.article-view .expense-statement thead th,
 .article-view .expense-statement-item {
     height: 30px;
     line-height: 30px;
     border-bottom: 1px solid #ddd;
+}
+.article-view .expense-statement-item td {
+    padding: 0 6px;
 }
 .article-view .expense-statement-item .price {
     text-align: right;
