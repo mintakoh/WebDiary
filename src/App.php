@@ -10,11 +10,7 @@ class App
     /**
      * App constructor.
      */
-    public function __construct()
-    {
-        $this->userRepository = IoC::resolve('userStore');
-        $this->diaryRepository = IoC::resolve('diaryStore');
-    }
+    public function __construct() {}
 
     /**
      * @return App
