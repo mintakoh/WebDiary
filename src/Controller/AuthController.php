@@ -33,7 +33,7 @@ class AuthController
     public function logout()
     {
         $_SESSION['user_id'] = null;
-        header('Location: /');
+        redirect('/');
     }
 
     public function join()
@@ -52,12 +52,7 @@ class AuthController
         $user = $userRepository->getUserById($id);
 
         if($user !== null) {
-            if (isset($_SERVER["HTTP_REFERER"])) {
-                header("Location: " . $_SERVER["HTTP_REFERER"]);
-            }
-            else {
-                header('Location: /');
-            }
+            redirectBack();
         }
 
         $newUser = new User($id, $password, $name);

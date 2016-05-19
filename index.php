@@ -7,6 +7,10 @@ require_once __DIR__."/src/helper.php";
 use Core\Session;
 use Core\IoC;
 
+IoC::register('message', function(){
+    return new \Core\FlashMessage();
+});
+
 IoC::register('template', function(){
     return new \Core\View\SimpleTemplate(__DIR__."/view");
 });

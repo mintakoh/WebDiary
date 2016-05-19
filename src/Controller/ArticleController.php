@@ -47,6 +47,8 @@ class ArticleController
     }
 
     public function update($id){
+
+        /** @var Article $article */
         $article = IoC::resolve('diaryStore')->getArticleById($id);
 
         $article->setDate($_POST["date"]);

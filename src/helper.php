@@ -9,6 +9,19 @@ function view() {
     return IoC::resolve('template');
 }
 
+function redirect($url) {
+    header('Location: ' . $url);
+}
+
+function redirectBack() {
+    if (isset($_SERVER["HTTP_REFERER"])) {
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
+    }
+    else {
+        header('Location: /');
+    }
+}
+
 /**
  * @return App
  */
