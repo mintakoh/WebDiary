@@ -243,4 +243,18 @@ class Article
         }
         return $summary;
     }
+
+    public function getTotalPrice()
+    {
+        $totalPrices = [0,0];
+        foreach($this->receipts as $receipt){
+            if($receipt->getCurrency() == "krw"){
+                $totalPrices['krw'] += $receipt->getPrice();
+            }
+            elseif($receipt->getCurrency() == 'usd'){
+                $totalPrices['usd'] += $receipt->getPrice();
+            }
+        }
+        return $totalPrices;
+    }
 }
