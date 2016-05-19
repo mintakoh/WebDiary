@@ -58,6 +58,10 @@ class ArticleFileRepository
 
     public function modifyArticle(Article $article)
     {
+        //파일이 날짜 기준으로 작성되다보니 이전 글을 지우고 다시 올리는게 더 간단함
+        $this->removeArticleById($article->getId());
+
+        $articles = $this->getArticlesByDate($article->getDate());
         $articles[$article->getId()] = $article;
         file_put_contents($this->getFileName($article), serialize($articles));
     }
