@@ -1,5 +1,14 @@
 <?php include "header.php" ?>
+
 <div id="contents" class="container">
+
+    <?php
+    /** @var \Core\Message\Message $message */
+    foreach($messages as $message) : ?>
+    <div class="msg-<?=$message->getType()?>">
+        <?=$message->getText()?>
+    </div>
+    <?php endforeach; ?>
 
     <form action="/?r=/article/create" method="post">
     <div class="left-side">

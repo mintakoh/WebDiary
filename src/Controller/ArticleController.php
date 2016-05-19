@@ -2,10 +2,12 @@
 
 namespace Controller;
 
+use Core\FlashMessage;
 use Model\Article;
 use Model\Receipt;
 use Model\User;
 use Core\IoC;
+use Repository\ArticleFileRepository;
 
 class ArticleController
 {
@@ -35,13 +37,27 @@ class ArticleController
 
     public function create(){
 
+        /** @var \Core\Message\FlashMessage $message */
+        $message = IoC::resolve('message');
+
+        if(strlen(trim($_POST["subject"])) < 10) {
+            $message->error('제목을 10자 이상 입력해주세요.');
+            return redirectBack();
+        }
+        if(strlen(trim($_POST["content"])) < 10) {
+            $message->error('내용을 10자 이상 입력해주세요.');
+            return redirectBack();
+        }
+
         $article = new Article(getCurrentUser(),$_POST["date"],$_POST["subject"],$_POST["content"],$_POST["secret"]);
 
         for($i = 0; $i < count($_POST["price"]); $i++) {
             $article->addReceipt(new Receipt($_POST["summary"][$i],$_POST["price"][$i],$_POST["currency"][$i]));
         }
-
-        IoC::resolve('diaryStore')->createArticle($article);
+        
+        /** @var ArticleFileRepository $repository */
+        $repository = IoC::resolve('diaryStore');
+        $repository->createArticle($article);
 
         header('Location: /?r=/article/'.$article->getId());
     }

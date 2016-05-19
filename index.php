@@ -8,7 +8,7 @@ use Core\Session;
 use Core\IoC;
 
 IoC::register('message', function(){
-    return new \Core\FlashMessage();
+    return new \Core\Message\FlashMessage();
 });
 
 IoC::register('template', function(){
