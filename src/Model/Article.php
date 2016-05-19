@@ -2,10 +2,6 @@
 
 namespace Model;
 
-use Model\Receipt;
-use Model\User;
-use Model\Map;
-
 class Article
 {
     /**
@@ -39,12 +35,15 @@ class Article
      * @var string
      */
     private $content;
+
     /**
      * @var int
      */
     private $secret;
 
-
+    /**
+     * @var string
+     */
     private $weather;
 
     /**
@@ -54,14 +53,16 @@ class Article
      * @param string $subject
      * @param string $content
      * @param int $secret
+     * @param string $weather
      */
-    public function __construct(User $user, $date, $subject, $content, $secret)
+    public function __construct(User $user, $date, $subject, $content, $secret, $weather = 'sun')
     {
         $this->user = $user;
         $this->date = $date;
         $this->subject = $subject;
         $this->content = $content;
         $this->secret = $secret;
+        $this->weather = $weather;
     }
 
     /**

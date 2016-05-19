@@ -48,9 +48,8 @@ class ArticleController
             $message->error('내용을 10자 이상 입력해주세요.');
             return redirectBack();
         }
-
-        $article = new Article(getCurrentUser(),$_POST["date"],$_POST["subject"],$_POST["content"],$_POST["secret"]);
-
+        
+        $article = new Article(getCurrentUser(),$_POST["date"],$_POST["subject"],$_POST["content"],$_POST["secret"], $_POST['weather']);
         for($i = 0; $i < count($_POST["price"]); $i++) {
             $article->addReceipt(new Receipt($_POST["summary"][$i],$_POST["price"][$i],$_POST["currency"][$i]));
         }

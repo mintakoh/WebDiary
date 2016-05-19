@@ -26,6 +26,9 @@
     padding: 0 5px;
     box-sizing: border-box;
 }
+.write-form .weather-icon {
+    font-size: 20px;
+}
 
 .secret-form {
     width: 400px;
@@ -94,7 +97,7 @@
     padding: 15px;
     background: #fff;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
 }
 .article-list-item-subject {
     display: block;
@@ -121,7 +124,7 @@
 .article-view {
     margin-top: 20px;
     padding: 25px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     background: #fff;
 }
 .article-view-meta {

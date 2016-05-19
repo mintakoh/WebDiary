@@ -26,6 +26,14 @@
                 <textarea rows="10" cols="50" name="content"></textarea>
             </fieldset>
             <fieldset class="form-group">
+                <label>날씨</label>
+                <i class="weather-icon xi-sun"></i> 맑음 <input type="radio" name="weather" value="sun" checked/>
+                <i class="weather-icon xi-umbrella"></i> 비 <input type="radio" name="weather" value="umbrella" />
+                <i class="weather-icon xi-cloudiness"></i> 흐림 <input type="radio" name="weather" value="cloudiness"/>
+                <i class="weather-icon xi-lightning"></i> 번개 <input type="radio" name="weather" value="lightning"/>
+                <i class="weather-icon xi-snow"></i> 눈 <input type="radio" name="weather" value="snow"/>
+            </fieldset>
+            <fieldset class="form-group">
                 비밀글 <input type="checkbox" class="check_secret">
                 <input type="password" name="secret" class="secret_password">
             </fieldset>
