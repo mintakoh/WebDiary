@@ -14,10 +14,6 @@
             패스워드
             <input type="password" name="password" required/>
         </label>
-        <label for="password">
-            패스워드 재확인
-            <input type="password" name="password2" required/>
-        </label>
         <input type="submit" value="회원가입" class="btn-primary" />
     </form>
 </div>
