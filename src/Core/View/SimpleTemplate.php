@@ -1,7 +1,6 @@
 <?php
 namespace Core\View;
 
-use Core\FlashMessage;
 use Core\IoC;
 
 class SimpleTemplate
@@ -27,7 +26,7 @@ class SimpleTemplate
         ob_start();
         extract($values);
 
-        /** @var FlashMessage $message */
+        /** @var \Core\Message\FlashMessage $message */
         $messages = $message->getMessages();
 
         if (!file_exists("{$this->path}/{$template}.php")) {
