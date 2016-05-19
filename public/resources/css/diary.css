@@ -128,6 +128,9 @@
     background: #fff;
     overflow: hidden;
 }
+.article-view .pull-left {
+    width: 52%;
+}
 .article-view .pull-right {
     width: 45%;
 }
@@ -160,6 +163,9 @@
     height: 30px;
     line-height: 30px;
     border-bottom: 1px solid #ddd;
+}
+.article-view .expense-statement-item.no-item {
+    text-align: center;
 }
 .article-view .expense-statement-item td {
     padding: 0 6px;

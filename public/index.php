@@ -20,7 +20,7 @@ IoC::register('userStore', function(){
 });
 
 IoC::register('diaryStore', function(){
-    return new \Repository\ArticleFileRepository(__DIR__."/../diary/", __DIR__."/storage/diary_id.txt");
+    return new \Repository\ArticleFileRepository(__DIR__."/../diary/", __DIR__."/../storage/diary_id.txt");
 });
 
 /**

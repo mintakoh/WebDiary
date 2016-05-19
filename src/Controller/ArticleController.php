@@ -64,7 +64,14 @@ class ArticleController
         
         $article = new Article(getCurrentUser(),$_POST["date"],$_POST["subject"],$_POST["content"],$_POST["secret"], $_POST['weather']);
         for($i = 0; $i < count($_POST["price"]); $i++) {
-            $article->addReceipt(new Receipt($_POST["summary"][$i],$_POST["price"][$i],$_POST["currency"][$i]));
+
+            $price = $_POST["price"][$i];
+            $summary = $_POST["summary"][$i];
+            $currency = $_POST["currency"][$i];
+
+            if(!is_numeric($price)) continue;
+
+            $article->addReceipt(new Receipt($summary,$price,$currency));
         }
         
         /** @var ArticleFileRepository $repository */
@@ -135,7 +142,7 @@ class ArticleController
     public function remove($id){
         IoC::resolve('diaryStore')->removeArticleById($id);
 
-        header('Location: /?r=/articles/my');
+        header('Location: /?r=/articles/my/1');
     }
 
     public function userArticles($userId, $page) {

@@ -16,7 +16,7 @@
                 <span><i class="xi-user"></i> <?= $article->getUser()->getName(); ?></span>
             </div>
             <div class="article-view-content">
-                <?= $article->getContent(); ?>
+                <?= nl2br($article->getContent()); ?>
             </div>
         </div>
 
@@ -37,6 +37,11 @@
                     <td class="price"><?=strtoupper($receipt->getCurrency())?> <?=number_format($receipt->getPrice())?></td>
                 </tr>
                 <?php endforeach; ?>
+                <?php if(count($article->getReceipts()) == 0) : ?>
+                    <tr class="expense-statement-item no-item">
+                        <td colspan="2">지출내역이 없습니다.</td>
+                    </tr>
+                <?php endif; ?>
                 </tbody>
             </table>
         </div>
