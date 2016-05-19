@@ -6,12 +6,12 @@ use Repository\UserTextFileRepository;
 
 class UserController
 {
-    public static function create()
+    public function create()
     {
         echo "create user";
     }
 
-    public static function update()
+    public function update()
     {
         echo "update user";
     }

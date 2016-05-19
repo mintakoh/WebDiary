@@ -7,13 +7,13 @@ use Model\User;
 
 class AuthController
 {
-    public static function index()
+    public function index()
     {
         $error = isset($_GET['error']);
         view()->render('auth', ['error' => $error]);
     }
 
-    public static function login()
+    public function login()
     {
         /** @var \Repository\UserRepositoryInterface $userRepository */
         $userRepository = \IoC::resolve('userStore');
@@ -30,18 +30,18 @@ class AuthController
         }
     }
 
-    public static function logout()
+    public function logout()
     {
         $_SESSION['user_id'] = null;
         header('Location: /');
     }
 
-    public static function join()
+    public function join()
     {
         view()->render('join');
     }
 
-    public static function joinRequest()
+    public function joinRequest()
     {
         $id = $_POST['id'];
         $password = $_POST['password'];

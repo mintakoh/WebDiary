@@ -9,7 +9,7 @@ use Repository\ArticleFileRepository;
 
 class ArticleController
 {
-    public static function index(){
+    public function index(){
 
         /** @var User $user */
         $user = getCurrentUser();
@@ -21,7 +21,7 @@ class ArticleController
         view()->render('article_list', ['articles'=>$articles]);
     }
 
-    public static function write() {
+    public function write() {
 
         /** @var User $user */
         $user = getCurrentUser();
@@ -33,7 +33,7 @@ class ArticleController
         view()->render('article_create');
     }
 
-    public static function create(){
+    public function create(){
 
         $article = new Article(getCurrentUser(),$_POST["date"],$_POST["subject"],$_POST["content"],$_POST["secret"]);
 
@@ -46,7 +46,7 @@ class ArticleController
         header('Location: /?r=/article/'.$article->getId());
     }
 
-    public static function update($id){
+    public function update($id){
         $article = \IoC::resolve('diaryStore')->getArticleById($id);
 
         $article->setDate($_POST["date"]);
@@ -77,7 +77,7 @@ class ArticleController
         header('Location: /?r=/article/'.$article->getId());
     }
 
-    public static function modify($id){
+    public function modify($id){
         $article = \IoC::resolve('diaryStore')->getArticleById($id);
 
         if(getCurrentUser()->getId() !== $article->getUser()->getId())
@@ -88,7 +88,7 @@ class ArticleController
         view()->render('article_modify', ['article'=>$article]);
     }
 
-    public static function view($id){
+    public function view($id){
 
         /** @var User $currentUser */
         $currentUser = getCurrentUser();
@@ -101,13 +101,13 @@ class ArticleController
         view()->render('article', ['article'=>$article, 'isOwner'=>$isOwner]);
     }
 
-    public static function remove($id){
+    public function remove($id){
         \IoC::resolve('diaryStore')->removeArticleById($id);
 
         header('Location: /?r=/article');
     }
 
-    public static function userArticles($userId) {
+    public function userArticles($userId) {
         $articles = \IoC::resolve('diaryStore')->getArticlesByUserId($userId);
         view()->render('article_list', ['articles'=>$articles]);
     }
