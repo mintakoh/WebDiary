@@ -12,7 +12,7 @@ IoC::register('template', function(){
 });
 
 IoC::register('userStore', function(){
-    return new \Repository\UserTextFileRepository(__DIR__."/storage/passwd.txt");
+    return new \Repository\UserFileRepository(__DIR__."/storage/passwd.txt");
 });
 
 IoC::register('diaryStore', function(){

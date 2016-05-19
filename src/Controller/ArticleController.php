@@ -5,7 +5,7 @@ namespace Controller;
 use Model\Article;
 use Model\Receipt;
 use Model\User;
-use Repository\ArticleFileRepository;
+use Core\IoC;
 
 class ArticleController
 {
@@ -17,7 +17,7 @@ class ArticleController
         if($user == null) {
             header('Location: /?r=/auth');
         }
-        $articles = \IoC::resolve('diaryStore')->getArticlesByUserId($user->getId());
+        $articles = IoC::resolve('diaryStore')->getArticlesByUserId($user->getId());
         view()->render('article_list', ['articles'=>$articles]);
     }
 
@@ -41,13 +41,13 @@ class ArticleController
             $article->addReceipt(new Receipt($_POST["summary"][$i],$_POST["price"][$i],$_POST["currency"][$i]));
         }
 
-        \IoC::resolve('diaryStore')->createArticle($article);
+        IoC::resolve('diaryStore')->createArticle($article);
 
         header('Location: /?r=/article/'.$article->getId());
     }
 
     public function update($id){
-        $article = \IoC::resolve('diaryStore')->getArticleById($id);
+        $article = IoC::resolve('diaryStore')->getArticleById($id);
 
         $article->setDate($_POST["date"]);
         $article->setSubject($_POST["subject"]);
@@ -72,13 +72,13 @@ class ArticleController
         }
 
 
-        \IoC::resolve('diaryStore')->modifyArticle($article);
+        IoC::resolve('diaryStore')->modifyArticle($article);
 
         header('Location: /?r=/article/'.$article->getId());
     }
 
     public function modify($id){
-        $article = \IoC::resolve('diaryStore')->getArticleById($id);
+        $article = IoC::resolve('diaryStore')->getArticleById($id);
 
         if(getCurrentUser()->getId() !== $article->getUser()->getId())
         {
@@ -93,7 +93,7 @@ class ArticleController
         /** @var User $currentUser */
         $currentUser = getCurrentUser();
 
-        $article = \IoC::resolve('diaryStore')->getArticleById($id);
+        $article = IoC::resolve('diaryStore')->getArticleById($id);
         $isOwner = false;
         if(isset($currentUser) && $article->getUser()->getId() == $currentUser->getId()){
             $isOwner = true;
@@ -102,13 +102,13 @@ class ArticleController
     }
 
     public function remove($id){
-        \IoC::resolve('diaryStore')->removeArticleById($id);
+        IoC::resolve('diaryStore')->removeArticleById($id);
 
         header('Location: /?r=/article');
     }
 
     public function userArticles($userId) {
-        $articles = \IoC::resolve('diaryStore')->getArticlesByUserId($userId);
+        $articles = IoC::resolve('diaryStore')->getArticlesByUserId($userId);
         view()->render('article_list', ['articles'=>$articles]);
     }
 }

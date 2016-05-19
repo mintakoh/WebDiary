@@ -2,7 +2,7 @@
 
 namespace Controller;
 
-use Repository\UserTextFileRepository;
+use Repository\UserFileRepository;
 
 class UserController
 {

@@ -5,7 +5,7 @@ namespace Repository;
 
 use Model\User;
 
-class UserTextFileRepository implements UserRepositoryInterface
+class UserFileRepository implements UserRepositoryInterface
 {
 
     /**

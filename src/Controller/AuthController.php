@@ -2,7 +2,7 @@
 
 namespace Controller;
 
-
+use Core\IoC;
 use Model\User;
 
 class AuthController
@@ -16,7 +16,7 @@ class AuthController
     public function login()
     {
         /** @var \Repository\UserRepositoryInterface $userRepository */
-        $userRepository = \IoC::resolve('userStore');
+        $userRepository = IoC::resolve('userStore');
 
         /** @var User $user */
         $user = $userRepository->getUserById($_POST['id']);
@@ -48,7 +48,7 @@ class AuthController
         $name = $_POST['name'];
 
         /** @var \Repository\UserRepositoryInterface $userRepository */
-        $userRepository = \IoC::resolve('userStore');
+        $userRepository = IoC::resolve('userStore');
         $user = $userRepository->getUserById($id);
 
         if($user !== null) {
