@@ -97,7 +97,7 @@ class ArticleFileRepository
     {
         $articlesSet = [];
 
-        $dir = scandir("./diary/");
+        $dir = scandir($this->filePath);
         foreach($dir as $file_name) {
             if($file_name == '.' || $file_name == '..') continue;
             $date = explode('.', $file_name)[0];
