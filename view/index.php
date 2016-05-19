@@ -19,22 +19,22 @@
         </div>
         <ul class="friends-diary-list">
             <li>
-                <a href="/?r=/user/osh/articles"><img src="/resources/images/profiles/osh.jpg" class="profile-img"/></a>
+                <a href="/?r=/user/osh/articles/1"><img src="/resources/images/profiles/osh.jpg" class="profile-img"/></a>
             </li>
             <li>
-                <a href="/?r=/user/lts/articles"><img src="/resources/images/profiles/lts.jpg" class="profile-img"/></a>
+                <a href="/?r=/user/lts/articles/1"><img src="/resources/images/profiles/lts.jpg" class="profile-img"/></a>
             </li>
             <li>
-                <a href="/?r=/user/omt/articles"><img src="/resources/images/profiles/omt.jpg" class="profile-img"/></a>
+                <a href="/?r=/user/omt/articles/1"><img src="/resources/images/profiles/omt.jpg" class="profile-img"/></a>
             </li>
             <li>
-                <a href="/?r=/user/ajh/articles"><img src="/resources/images/profiles/ajh.jpg" class="profile-img"/></a>
+                <a href="/?r=/user/ajh/articles/1"><img src="/resources/images/profiles/ajh.jpg" class="profile-img"/></a>
             </li>
             <li>
-                <a href="/?r=/user/iu/articles"><img src="/resources/images/profiles/iu.jpg" class="profile-img"/></a>
+                <a href="/?r=/user/iu/articles/1"><img src="/resources/images/profiles/iu.jpg" class="profile-img"/></a>
             </li>
             <li>
-                <a href="/?r=/user/hys/articles"><img src="/resources/images/profiles/hys.jpg" class="profile-img"/></a>
+                <a href="/?r=/user/hys/articles/1"><img src="/resources/images/profiles/hys.jpg" class="profile-img"/></a>
             </li>
         </ul>
     </div>

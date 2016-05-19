@@ -11,7 +11,7 @@ use Repository\ArticleFileRepository;
 
 class ArticleController
 {
-    public function index(){
+    public function index($page){
 
         /** @var User $user */
         $user = getCurrentUser();
@@ -19,8 +19,21 @@ class ArticleController
         if($user == null) {
             header('Location: /?r=/auth');
         }
-        $articles = IoC::resolve('diaryStore')->getArticlesByUserId($user->getId());
-        view()->render('article_list', ['articles'=>$articles]);
+        $articleSet = IoC::resolve('diaryStore')->getArticlesByUserId($user->getId());
+        $articles = [];
+
+        $pages = ceil(count($articleSet) / 5);
+
+        for($i = 0; $i < 5; $i++) {
+            if(count($articleSet) - $i - 1 - 5 * ($page - 1) >= 0)
+                $articles[$i] = $articleSet[count($articleSet) - $i - 1 - 5 * ($page - 1)];
+        }
+
+        $next = floor(($page-1)/4);
+
+        $isOwner = true;
+
+        view()->render('article_list', ['articles'=>$articles , 'pages' => $pages, 'next' => $next, 'isOwner' => $isOwner]);
     }
 
     public function write() {
@@ -121,11 +134,28 @@ class ArticleController
     public function remove($id){
         IoC::resolve('diaryStore')->removeArticleById($id);
 
-        header('Location: /?r=/article');
+        header('Location: /?r=/articles/my');
     }
 
-    public function userArticles($userId) {
-        $articles = IoC::resolve('diaryStore')->getArticlesByUserId($userId);
-        view()->render('article_list', ['articles'=>$articles]);
+    public function userArticles($userId, $page) {
+        $articleSet = IoC::resolve('diaryStore')->getArticlesByUserId($userId);
+        $articles = [];
+
+        $pages = ceil(count($articleSet) / 5);
+
+        for($i = 0; $i < 5; $i++) {
+            if(count($articleSet) - $i - 1 - 5 * ($page - 1) >= 0)
+                $articles[$i] = $articleSet[count($articleSet) - $i - 1 - 5 * ($page - 1)];
+        }
+
+        $next = floor(($page-1)/4);
+
+        if($userId == getCurrentUser()->getId()){
+            $isOwner = true;
+        }
+        else
+            $isOwner = false;
+
+        view()->render('article_list', ['articles'=>$articles , 'pages' => $pages, 'next' => $next, 'isOwner' => $isOwner, 'userId' => $userId]);
     }
 }
