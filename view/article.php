@@ -54,7 +54,7 @@
         <a href="/?r=/article/modify/<?=$article->getId()?>" class="btn-medium btn-primary">수정</a>
         <a href="/?r=/article/remove/<?=$article->getId()?>" class="btn-medium btn-primary">삭제</a>
     <?php else : ?>
-        <a href="/?r=/user/<?=$article->getUser()->getId()?>/articles" class="btn-medium btn-primary">목록</a>
+        <a href="/?r=/user/<?=$article->getUser()->getId()?>/articles/1" class="btn-medium btn-primary">목록</a>
     <?php endif; ?>
     </div>
 <?php
