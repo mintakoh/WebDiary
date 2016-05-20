@@ -52,7 +52,7 @@ class AuthController
         $user = $userRepository->getUserById($id);
 
         if($user !== null) {
-            redirectBack();
+            return redirectBack();
         }
 
         $newUser = new User($id, $password, $name);
