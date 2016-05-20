@@ -14,6 +14,7 @@
             <div class="article-view-meta">
                 <span><i class="xi-calendar"></i> <?= $article->getDate(); ?></span>
                 <span><i class="xi-user"></i> <?= $article->getUser()->getName(); ?></span>
+                <span><i class="xi-<?=$article->getWeather()?>"></i> <?=$article->getWeatherText()?></span>
             </div>
             <div class="article-view-content">
                 <?= nl2br($article->getContent()); ?>
