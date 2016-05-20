@@ -50,7 +50,7 @@
 
     <div class="pull-right">
     <?php if($isOwner == true) : ?>
-        <a href="/?r=/articles/my" class="btn-medium btn-primary">목록</a>
+        <a href="/?r=/articles/my/1" class="btn-medium btn-primary">목록</a>
         <a href="/?r=/article/modify/<?=$article->getId()?>" class="btn-medium btn-primary">수정</a>
         <a href="/?r=/article/remove/<?=$article->getId()?>" class="btn-medium btn-primary">삭제</a>
     <?php else : ?>
